@@ -14,8 +14,16 @@ def index():
 @app.route('/numero/<limite>')
 def leatorio(limite):
     final = random.randint(int(limite)+1, 100)
+    print(random.random())
     return str(final)
 
+@app.route('/numeros/<inicio>:<fim>')
+def ale(inicio, fim):
+    mid = random.randint(-10**6, 10**6)
+    while int(inicio)<= mid <= int(fim):
+        mid = random.randint (-10**6, 10**6)
+    print(mid)
+    return str(mid)
 
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0')
